@@ -55,23 +55,24 @@ counter();
 counter();
 counter();
 counter();
+
 // inheritance with factories
-const Person = (name) => {
+const PersonAgain = (name) => {
     const sayName = () => console.log(`my name is ${name}`);
     return { sayName };
 }
 
 const Nerd = (name) => {
-    // simply create a person and pull out the sayName function with destructuring assignment syntax!
-    const { sayName } = Person(name);
+    // simply create a PersonAgain and pull out the sayName function with destructuring assignment syntax!
+    const { sayName } = PersonAgain(name);
     const doSomethingNerdy = () => console.log('nerd stuff');
     return { sayName, doSomethingNerdy };
 }
 
-const jeff = Nerd('jeff');
+const george = Nerd('george');
 
-jeff.sayName(); //my name is jeff
-jeff.doSomethingNerdy(); // nerd stuff
+george.sayName(); //my name is george
+george.doSomethingNerdy(); // nerd stuff
 
 
 // module pattern: (Immediately Invoked Function Expression)
